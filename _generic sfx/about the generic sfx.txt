@@ -1,0 +1,3 @@
+if the game comes with dedicated "correct" sfx file(s), please use them first.
+if the game comes with hint audio files, please use them instead of the wrong.ogg file.
+the "completion" audio is to be played when the player, presumably with much effort and pain, finally finishes the game.

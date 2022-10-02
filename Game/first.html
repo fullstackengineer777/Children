@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dice Roll</title>
+    <link rel="stylesheet" href="./assets/css/dice.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <!-- <link  rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+
+  </head>
+  <body>
+  <div id="container">
+    <canvas id="game-area"></canvas>
+    <div class="gameboard">
+        <div class="header-section">
+            <div id="roll-button">
+              <i class="fa fa-play" aria-hidden="true"></i>
+            </div>
+            <div class="dice">
+                <ol class="die-list even-roll" data-roll="1" id="die-1">
+                  <li class="die-item" data-side="1">
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="2">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="3">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="4">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="5">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="6">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                </ol>            
+            </div>
+            <div class="cat-avatar"><img id="cat-img" src="./assets/img/tiger.png" width="100" height="100" style="display: none;"></div>
+            <div id="help-button"><i class="fa fa-question" aria-hidden="true"></i></div>  
+        </div>
+        <div class="test-section">
+            <div class="query-item item1" id="start-btn"><h1>Start</h1></div>
+            <div class="query-item item2">2</div>
+            <div class="query-item item3"><h2>Runner</h2></div>
+            <div class="query-item item4">4</div>
+            <div class="query-item item5"><h2>Singer</h2></div>
+            <div class="query-item item6">6</div>
+            <div class="query-item item7">7</div>
+            <div class="query-item item8">8</div>
+            <div class="query-item item9">9</div>
+            <div class="query-item item10">10</div>
+            <div class="query-item item11"><h2>Director</h2></div>
+            <div class="query-item item12"><h2>Sailor</h2></div>
+            <div class="query-item item13" id="end-btn"><h1>End</h1></div>
+        </div>      
+    </div>
+
+
+</div>    
+     <script src="./assets/js/jquery.min.js"></script>
+     <script src="./assets/js/app.js"></script> 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.min.js"> 
+     </script> 
+  </body>
+</html>
+

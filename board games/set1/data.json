@@ -1,0 +1,52 @@
+{
+    "instruction": "Roll the dice and answer the questions!",
+    "questions": [
+        {
+            "type": "a",
+            "answer": "driver"
+        },
+        {
+            "type": "b",
+            "answer": "sailor"
+        },
+        {
+            "type": "a",
+            "answer": "teacher"
+        },
+        {
+            "type": "b",
+            "answer": "singer"
+        },
+        {
+            "type": "c",
+            "answer": "writer",
+            "misspelled": "writor"
+        },
+        {
+            "type": "a",
+            "answer": "swimmer"
+        },
+        {
+            "type": "a",
+            "answer": "actor"
+        },
+        {
+            "type": "c",
+            "answer": "baker",
+            "misspelled": "backer"
+        },
+        {
+            "type": "c",
+            "answer": "doctor",
+            "misspelled": "docter"
+        },
+        {
+            "type": "b",
+            "answer": "director"
+        },
+        {
+            "type": "b",
+            "answer": "runner"
+        }
+    ]
+}

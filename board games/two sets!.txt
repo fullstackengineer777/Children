@@ -1,0 +1,16 @@
+for this game, you will have to submit 2 versions to adapt to the game's anomalies,
+because only just now we noticed that the client wants two different games, really.
+
+set 1:
+- as described in the requirements PDF.
+- three question types:
+  - A: Picture plus four words, one correct and the other 3 randomly chosen from among the other answers, i.e. some other job.
+  - B: Word and two pictures, one correct and one not so.
+  - C: Picture and two words, one correct and the other misspelled.
+
+set 2:
+- a question audio (if available) be played when the cat lands on some location, and
+- a hint audio (if available) be played if the player makes a mistake
+- all questions are the same:
+  - display in the question box says "Which picture means ${data.questions[i]}"?
+  - two pictures shown below for them to choose
