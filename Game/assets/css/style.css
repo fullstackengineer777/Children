@@ -20,7 +20,7 @@ body{
 	width: 600px;
 	/*margin: 0 auto;*/
 	height: 100%;
-	z-index: 100;
+	z-index: 50;
 	position: absolute;
 }
 #game-area{
@@ -107,6 +107,10 @@ body{
 .query-item h2{
 	color: red;
 }
+.query-item img{
+	width: 80px;
+	height: 80px;
+}
 .item1{ position: absolute;  left: 4%; 	top: 3%; }
 .item2{ position: absolute;	left: 28%; 	top: 7%; }
 .item3{ position: absolute; left: 52%; 	top: 0%; }
@@ -136,5 +140,79 @@ body{
 .item13:hover{ background-color: rgb(243, 245, 141); }
 
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  /*width: 80%;*/
+  width: 500px;
+  height: 600px;
+  border: 5px solid rgb(255,227,77);
+  border-radius: 10px;
+  background-color: white;
+ 
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 100px 0;
+  color: red;
+}
+.modal-content-img-a{
+	 display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 50px;
+}
+.modal-content-img-a img{
+	max-width: 200px;
+	max-height: 300px;
+}
+.modal-content > .a-ques-pic01 , .a-ques-pic02{
+	max-width: 200px;
+	max-height: 300px;
+}
+
+.b-ques-pic01:hover , .b-ques-pic02:hover {
+	border: 5px dashed red;
+}
+.modal-content h2{
+	color: red;
+	border: 5px solid rgb(101,197, 206);
+	border-radius: 10px;
+	text-align: center;
+	width: 180px;
+	padding: 15px;
+	margin: 10px;	
+}
+.modal-content-answer-a{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	place-items: center;
+}
+.modal-content h2:hover{
+	border: 5px dashed red;
+}
 
 

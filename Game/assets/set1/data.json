@@ -1,6 +1,9 @@
-export default{
 
-    {
+
+export default{
+    type:"module",
+
+    
         "instruction": "Roll the dice and answer the questions!",
         "questions": [
             {
@@ -51,7 +54,9 @@ export default{
                 "answer": "runner"
             }
         ]
-    }
+    
 
 
-}
+
+
+}   

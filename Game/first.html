@@ -16,9 +16,11 @@
     <canvas id="game-area"></canvas>
     <div class="gameboard">
         <div class="header-section">
-            <div id="roll-button">
-              <i class="fa fa-play" aria-hidden="true"></i>
-            </div>
+            <div>
+                <div id="roll-button" style="display: none;">
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                </div>
+            </div>  
             <div class="dice">
                 <ol class="die-list even-roll" data-roll="1" id="die-1">
                   <li class="die-item" data-side="1">
@@ -57,27 +59,57 @@
                 </ol>            
             </div>
             <div class="cat-avatar"><img id="cat-img" src="./assets/img/tiger.png" width="100" height="100" style="display: none;"></div>
-            <div id="help-button"><i class="fa fa-question" aria-hidden="true"></i></div>  
+            <div>              
+                 <div id="help-button" style="display: none;"><i class="fa fa-question" aria-hidden="true"></i></div>  
+            </div>
         </div>
         <div class="test-section">
             <div class="query-item item1" id="start-btn"><h1>Start</h1></div>
             <div class="query-item item2">2</div>
-            <div class="query-item item3"><h2>Runner</h2></div>
+            <div class="query-item item3"></div>
             <div class="query-item item4">4</div>
-            <div class="query-item item5"><h2>Singer</h2></div>
+            <div class="query-item item5"></div>
             <div class="query-item item6">6</div>
             <div class="query-item item7">7</div>
             <div class="query-item item8">8</div>
             <div class="query-item item9">9</div>
             <div class="query-item item10">10</div>
-            <div class="query-item item11"><h2>Director</h2></div>
-            <div class="query-item item12"><h2>Sailor</h2></div>
+            <div class="query-item item11"></div>
+            <div class="query-item item12"></div>
             <div class="query-item item13" id="end-btn"><h1>End</h1></div>
         </div>      
     </div>
 
 
-</div>    
+  </div>   
+  <div id="ques-Modal" class="modal">
+    <!-- <span class="close">&times;</span> -->
+    <div class="modal-content">
+        <!-- <h1 id="caption"></h1>
+        <div class="modal-content-img">          
+          <img class="a-ques-pic01" id="b-ques-pic01">
+          <img class="a-ques-pic02" id="b-ques-pic02">      
+        </div> -->
+        <!-- <div class="modal-content-img-a">   
+            <img class="a-ques-pic01" id="a-ques-pic01">
+        </div>
+        <div class="modal-content-answer-a">
+          <h2 id="a-word1"></h2>
+          <h2 id="a-word2"></h2>
+          <h2 id="a-word3"></h2>
+          <h2 id="a-word4"></h2>
+        </div> -->
+       <!--  <div class="modal-content-img-a">   
+            <img class="a-ques-pic01" id="a-ques-pic01">
+        </div>
+        <div class="modal-content-answer-a">
+          <h2 id="a-word1"></h2>
+          <h2 id="a-word2"></h2>
+        </div>  -->
+
+    </div>
+  </div> 
+
      <script src="./assets/js/jquery.min.js"></script>
      <script src="./assets/js/app.js"></script> 
      <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.min.js"> 
