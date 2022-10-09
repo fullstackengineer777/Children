@@ -15,6 +15,7 @@ body{
 }
 #container .canvas-container{
   position: absolute !important;
+  /*z-index: 10;*/
 }
 .gameboard{
 	width: 600px;
@@ -29,7 +30,7 @@ body{
 	height: 778px;
 	opacity: 0.5;
 	top: 0px;*/
-	z-index: 10;
+	z-index: 100;
 	background-color: rgba(0,0,255,0.1);
 
 }
@@ -44,10 +45,12 @@ body{
 	height: 15%;
 	align-items: center;
 	justify-items: center;
+	z-index: 150;
 }
 
 .test-section{
 	height: 85%;
+	z-index: 200;
 }
 #roll-button{
 	width: 50px;
@@ -187,13 +190,17 @@ body{
 }
 .modal-content-img-a img{
 	max-width: 200px;
-	max-height: 300px;
+	max-height: 200px;
+	margin: 0 10px;
 }
 .modal-content > .a-ques-pic01 , .a-ques-pic02{
 	max-width: 200px;
-	max-height: 300px;
+	max-height: 200px;
 }
-
+.b-ques-pic01{
+	max-width: 200px;
+	max-height: 200px;
+}
 .b-ques-pic01:hover , .b-ques-pic02:hover {
 	border: 5px dashed red;
 }
@@ -215,4 +222,6 @@ body{
 	border: 5px dashed red;
 }
 
-
+#cat-img{
+	z-index: 1000;
+}

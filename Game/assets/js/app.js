@@ -17,8 +17,9 @@ let questions1 = {
                 "type": "b",
                 "ques_word":"sailor",
                 "ques_pic1":"./assets/img/1_sailor.png",
-                "ques_pic2":"./assets/img/2_sailor.jpg",
-                "answer": "./assets/img/1_sailor.png"
+                "ques_pic2":"./assets/img/2_swimmer.png",
+                "answer1": "sailor",
+                "answer2": "swimmer"
             },
             {
                 "type": "a",
@@ -32,7 +33,7 @@ let questions1 = {
             {
                 "type": "b",
                 "ques_word":"singer",
-                "ques_pic1":"./assets/img/1_singer.png",
+                "ques_pic1":"./assets/img/3_teacher.png",
                 "ques_pic2":"./assets/img/2_singer.png",
                 "answer": "./assets/img/2_singer.png"
             },
@@ -56,7 +57,7 @@ let questions1 = {
                 "ques_pic":"./assets/img/a_actor.png",
                 "word1": "swimmer",
                 "word2": "driver",
-                "word3": "teacher",
+                "word3": "actor",
                 "word4": "student",
                 "answer": "actor"
             },
@@ -77,14 +78,16 @@ let questions1 = {
                 "ques_word":"director",
                 "ques_pic1":"./assets/img/1_director.png",
                 "ques_pic2":"./assets/img/2_director.png",
-                "answer": "./assets/img/2_director.png"
+                "answer1": "other",
+                "answer2": "director"
             },
             {
                 "type": "b",
                 "ques_word":"runner",
-                "ques_pic1":"./assets/img/1_runner.png",
+                "ques_pic1":"./assets/img/1_runner.jpg",
                 "ques_pic2":"./assets/img/2_runner.png",
-                "answer": "./assets/img/1_runner.png"
+                "answer1": "soldier",
+                "answer2": "runner"
             }
         ]
     };
@@ -107,6 +110,7 @@ function rollDice() {
     die.dataset.roll = step;
   });
   setTimeout(moveCat ,2000 , step);
+
 }
 
 function toggleClasses(die) {
@@ -123,7 +127,7 @@ function getRandomNumber(min, max) {
 // function endGame(){
 
 // }
-document.getElementById("start-btn").addEventListener("click", rollDice);
+document.getElementById("dice").addEventListener("click", rollDice);
 // document.getElementById("end-btn").addEventListenner("click", endGame);
 
 /***********moving cat************/
@@ -172,6 +176,7 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
   var canvas = new fabric.Canvas("game-area");
   // canvas.setHeight(h);
   // canvas.renderAll();
+  //add cat to screen
   var catImg = document.getElementById('cat-img');
   var catInstance = new fabric.Image(catImg, {left:300,top:10, opacity:1});//scaleX:0.2,scaleY:0.2,
   // var catInstance = new fabric.Image(catImg, {left:100,top:100,angle:30,opacity:0.85});
@@ -180,6 +185,8 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
   function moveCat(pos){
      let ll,tt;
      curPos += pos;
+     
+
      if(curPos >= (cntStep-1)){
         // moveCat(cntStep-1);
          ll =  parseInt(ques_pos[cntStep - 1].left.replace(/px/,""));
@@ -203,6 +210,9 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
          }
      }
 
+     //move the cat on the other layers
+     // document.getElementById('game-area').style.zIndex = 200;
+
   }
   
   function showProblem(proIndex){
@@ -210,7 +220,7 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
       proNo = proIndex;      
 
       modal.style.display = "block";
-
+      document.getElementsByClassName("header-section")[0].style.zIndex = 50;
       if (questions1.questions[proIndex].type == "b"){
           console.log("question type is b");
           $(".modal-content").html("<h1 id='caption'></h1><div class='modal-content-img-a'><img class='b-ques-pic01' id='b-ques-pic01'><img class='b-ques-pic02' id='b-ques-pic02'></div>");
@@ -223,23 +233,29 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
           captionText.innerHTML = questions1.questions[proIndex].ques_word;
 
           $("#b-ques-pic01").click(function(e){
-              let answer = ques_pic01.src;
-              console.log("answer a1 = ",answer)
-              if(answer == questions1.questions[proIndex].answer)
+              let answer = questions1.questions[proIndex].answer1;
+              console.log("b your answer = ",answer)
+              console.log("b correct answer = ", questions1.questions[proIndex].question);
+              if(answer == questions1.questions[proIndex].question)
                 suc++;
               else
                 failure++;
               modal.style.display = "none";
+              console.log("suc = " + suc + " failure = " + failure); 
+              document.getElementsByClassName("header-section")[0].style.zIndex = 150;
               return;
           });
           $("#b-ques-pic02").click(function(e){
-              let answer = ques_pic02.src;
-              console.log("answer a1 = ",answer)
-              if(answer == questions1.questions[proIndex].answer)
+              let answer = questions1.questions[proIndex].answer2;
+              console.log("b your answer = ",answer)
+              console.log("b correct answer = ", questions1.questions[proIndex].question);
+              if(answer == questions1.questions[proIndex].question)
                 suc++;
               else
                 failure++;
               modal.style.display = "none";
+              console.log("suc = " + suc + " failure = " + failure); 
+              document.getElementsByClassName("header-section")[0].style.zIndex = 150;
               return;
           });
 
@@ -269,6 +285,7 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
               failure++;
             console.log("suc = " + suc + " failure = " + failure); 
             modal.style.display = "none";
+            document.getElementsByClassName("header-section")[0].style.zIndex = 150;
             return;
           }); 
           $("#a-word2").click(function(e){
@@ -280,6 +297,7 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
               failure++;
             console.log("suc = " + suc + " failure = " + failure);
             modal.style.display = "none"; 
+            document.getElementsByClassName("header-section")[0].style.zIndex = 150;
             return;
           }); 
           $("#a-word3").click(function(e){
@@ -291,6 +309,7 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
               failure++;
             console.log("suc = " + suc + " failure = " + failure); 
             modal.style.display = "none";
+            document.getElementsByClassName("header-section")[0].style.zIndex = 150;
             return;
           }); 
           $("#a-word4").click(function(e){
@@ -302,6 +321,7 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
               failure++;
             console.log("suc = " + suc + " failure = " + failure);
             modal.style.display = "none"; 
+            document.getElementsByClassName("header-section")[0].style.zIndex = 150;
             return;
           }); 
 
@@ -327,6 +347,7 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
               failure++;
             console.log("suc = " + suc + " failure = " + failure); 
             modal.style.display = "none";
+            document.getElementsByClassName("header-section")[0].style.zIndex = 150;
             return;
           }); 
           $("#a-word2").click(function(e){
@@ -338,6 +359,7 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
               failure++;
             console.log("suc = " + suc + " failure = " + failure);
             modal.style.display = "none"; 
+            document.getElementsByClassName("header-section")[0].style.zIndex = 150;
             return;
           }); 
 
@@ -355,6 +377,7 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
       failure++;
     console.log("suc = " + suc + " failure = " + failure); 
     modal.style.display = "none";
+    document.getElementsByClassName("header-section")[0].style.zIndex = 150;
   }); 
   $("#b-ques-pic02").click(function(e){
     let answer = (this).data('src');
@@ -364,6 +387,7 @@ document.getElementById("start-btn").addEventListener("click", rollDice);
       failure++;
     console.log("suc = " + suc + " failure = " + failure); 
     modal.style.display = "none";
+    document.getElementsByClassName("header-section")[0].style.zIndex = 150;
   }); 
   // var x = $(".item2").css("left");
   // console.log(x);
